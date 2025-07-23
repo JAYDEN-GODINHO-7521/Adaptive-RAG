@@ -14,8 +14,8 @@ from langgraph.graph import END, StateGraph, START
 from fetch import retrive_rag
 from conv_memory import memory
 
-os.environ["GOOGLE_CSE_ID"] = "957fb9e872df34d4a"
-os.environ["GOOGLE_API_KEY"] = "AIzaSyAij6HMt0mnWKuiWPwIzkILGMYRAB07OFY"
+os.environ["GOOGLE_CSE_ID"] = ""
+os.environ["GOOGLE_API_KEY"] = ""
 
 class reflection:
     def main(self, question):
