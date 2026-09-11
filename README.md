@@ -12,7 +12,7 @@ Most RAG demos either always hit the vector store or always hit the web. This pr
 
 ## Architecture
 
-![System architecture overview](<img width="1880" height="1120" alt="image" src="https://github.com/user-attachments/assets/744dfe2f-e944-4214-90b5-9262f78d57c0" />)
+![System architecture overview](https://github.com/user-attachments/assets/744dfe2f-e944-4214-90b5-9262f78d57c0)
 
 | Piece | File | Role |
 |---|---|---|
@@ -29,7 +29,7 @@ Most RAG demos either always hit the vector store or always hit the web. This pr
 - the **header path** (e.g. `Intro-Setup-Installation`), embedded and written to a Chroma collection — this is what gets searched
 - the **chunk text itself**, written to a SQLite table keyed by the same id — this is what gets returned as context
 
-![Document ingestion pipeline](<img width="1880" height="960" alt="image" src="https://github.com/user-attachments/assets/0050e7c7-f32a-4e13-be55-af35354053ca" />)
+![Document ingestion pipeline](https://github.com/user-attachments/assets/0050e7c7-f32a-4e13-be55-af35354053ca)
 
 ### Query flow
 
@@ -43,13 +43,13 @@ Most RAG demos either always hit the vector store or always hit the web. This pr
 6. **grade_generation** — check the answer is grounded in the documents and actually answers the question; loop back to `generate` or `web_search` on failure (capped at one retry), otherwise continue
 7. **summarize_conversation** — fold the exchange into the rolling summary and persist it
 
-![Adaptive RAG LangGraph flow](<img width="1800" height="1800" alt="image" src="https://github.com/user-attachments/assets/dddc0a7e-d7bd-4b66-b80a-8bba76fbe0e5" />)
+![Adaptive RAG LangGraph flow](https://github.com/user-attachments/assets/dddc0a7e-d7bd-4b66-b80a-8bba76fbe0e5)
 
 ### Retrieval detail (RAG-Fusion)
 
 `fetch.py` doesn't do a single similarity search — it generates four related search queries, runs each against Chroma, and merges the ranked results with reciprocal rank fusion before pulling the winning chunks' full text out of SQLite.
 
-![RAG-Fusion retrieval detail](<img width="1880" height="1040" alt="image" src="https://github.com/user-attachments/assets/cf82bf94-64bc-4ee0-8104-2bef67e1c773" />)
+![RAG-Fusion retrieval detail](https://github.com/user-attachments/assets/cf82bf94-64bc-4ee0-8104-2bef67e1c773)
 
 ## Quick start
 
